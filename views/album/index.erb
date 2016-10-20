@@ -1,6 +1,7 @@
 <h2>Albums</h2>
 
 <% @albums.each do |album| %>
-Name: <%= album.name %>
+<p><b>Name: </b><%= album.name %></p>
+<p><a href="/music/albums/<%= album.id %>">View</a>
 <hr>
 <% end %>

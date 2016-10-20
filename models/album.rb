@@ -38,4 +38,17 @@ class Album
     return result
   end
 
+  def self.update(options)
+    sql = "UPDATE albums SET 
+          name = '#{options['name']}',
+          artist_id = '#{options["artist_id"]}',
+          WHERE id = '#{options["id"]}'"
+    SqlRunner.run(sql)
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM albums WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
 end

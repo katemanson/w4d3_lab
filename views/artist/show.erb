@@ -1,2 +1,7 @@
-<b>Name: </b>
+<b>Artist: </b>
 <p><%= @artist.name %></p>
+<p><a href="/music/artists/<%= @artist.id %>/edit">Edit</a></p>
+<form action="/music/artists/<%= @artist.id %>" method="post">
+  <input type="submit" value="Delete">
+  <input type="hidden" name="_method" value="delete"/>
+</form>

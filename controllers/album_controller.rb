@@ -21,3 +21,20 @@ get '/music/albums/:id' do
   @album = Album.find(params[:id])
   erb(:'album/show')
 end
+
+get '/music/albums/:id/edit' do
+  @album = Album.find(params[:id])
+  erb(:'album/edit')
+end
+
+# Not working?
+put '/music/albums/:id' do
+  @album = Album.update(params)
+  redirect to("/music/albums/#{params[:id]}")
+end
+
+# Not working?
+delete '/music/albums/:id' do
+  Album.destroy(params[:id])
+  redirect to('/music/albums')
+end

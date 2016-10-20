@@ -1,3 +1,9 @@
-<b>Name: </b>
-<p><%= @album.name %></p>
-<p><%= @album.artist.name %></p>
+<p><b>Album: </b><br>
+<%= @album.name %></p>
+<p><b>Artist: </b><br>
+<%= @album.artist.name %></p>
+<p><a href="/music/albums/<%= @album.id %>/edit">Edit</a></p>
+<form action="/music/albums/<%= @album.id %>" method="post">
+  <input type="submit" value="Delete">
+  <input type="hidden" name="_method"  value="delete">
+</form>

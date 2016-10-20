@@ -1,0 +1,14 @@
+<h2>All artists and albums</h2>
+
+<% @artists.each do |artist| %>
+
+  <p><b>Artist: </b></p>
+    <p><%= artist.name %>   <a href="/music/artists/<%= artist.id %>">View artist</a></p>
+  <p><b>Albums: </b></p>
+    <% albums = artist.albums() %>
+    <% albums.each do |album| %>
+    <p><%= album.name %>   <a href="/music/albums/<%= album.id %>">View album</a></p>
+    <% end %>
+    <hr>
+
+<% end %>
